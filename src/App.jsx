@@ -1,12 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import { ConfigProvider } from "zarm";
-import zhCN from "zarm/lib/config-provider/locale/zh_CN";
-import "zarm/dist/zarm.css";
-import routes from '@/router'
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
+import NavBar from "@/components/NavBar";
+import "zarm/dist/zarm.min.css"; // 引入 Zarm 的样式
+import { ConfigProvider } from "zarm";
+
+import routes from "@/router";
 function App() {
   return (
-    <ConfigProvider primaryColor={"#007fff"} locale={zhCN}>
+    <ConfigProvider primaryColor={"#007fff"}>
       <Routes>
         {routes.map((route) => (
           <Route

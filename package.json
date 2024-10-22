@@ -13,7 +13,9 @@
     "axios": "^1.7.7",
     "lib-flexible": "^0.3.2",
     "react": "^18.3.1",
+    "react-captcha-code": "^1.0.7",
     "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.27.0",
     "zarm": "^3.1.2"
   },

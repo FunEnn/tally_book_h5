@@ -1,12 +1,13 @@
 // Index/index.jsx
-import React from 'react'
-import { Button } from 'zarm'
+import React from "react";
+import MainLayout from "../../components/MainLayout";
 
-import s from './style.module.less'
-
-export default function Index() {
-  return <div className={s.index}>
-    <span>样式</span>
-    <Button theme='primary'>按钮</Button>
-  </div>
+const Index = () => {
+  return (
+      <MainLayout>
+        123456
+      </MainLayout>
+  )
 }
+
+export default Index;

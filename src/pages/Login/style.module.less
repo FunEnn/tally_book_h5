@@ -1,0 +1,70 @@
+// style.module.less
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  height: 100vh;
+  background-image: url("https://tse1-mm.cn.bing.net/th/id/OIP-C.iK1oYTDTUdm36ftfaiVKnQHaQD?rs=1&pid=ImgDetMain");
+  background-size: cover; /* 或者指定具体的尺寸，如100px 100px */
+  .head {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 200px;
+  }
+
+  .tab {
+    position: relative;
+    bottom: 0; // 底部对齐
+    left: 0; // 左侧对齐
+    display: flex; // 使用Flexbox布局
+    align-items: flex-start; // 左对齐
+    padding: 10px; // 一些内边距
+    font-size: 20px; // 字体大小
+    width: 100%;
+    // 为span设置基本样式
+    span {
+      cursor: pointer; // 鼠标悬停时显示指针
+      margin-right: 10px; // 右侧间距
+      margin-bottom: 10px; // 项目之间的间距
+      transition: all 0.3s ease; // 平滑过渡效果
+    }
+
+    // 为选中的元素设置样式
+    .avtive {
+      font-size: 1.2em; // 字体变大
+      font-weight: bold; // 字体加粗
+      color: #007bff; // 例如，设置为蓝色
+    }
+  }
+
+  .form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .operation {
+    width: 100%;
+    margin-top: 20px;
+
+    .agree {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      label {
+        margin-left: 5px;
+        font-size: 14px;
+        color: #666; // 文字颜色
+      }
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+}
