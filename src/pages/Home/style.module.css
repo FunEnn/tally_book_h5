@@ -1,0 +1,48 @@
+.home {
+  padding: 20px;
+  background-color: #3a68ff;
+}
+.home .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.home .header .expense,
+.home .header .income {
+  font-size: 16px;
+  color: white;
+}
+.home .header .expense b,
+.home .header .income b {
+  font-weight: bold;
+  font-size: 25px;
+}
+.home .typeWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.home .typeWrap .left,
+.home .typeWrap .right {
+  background-color: #3b5edc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-left: 10px;
+}
+.home .typeWrap .left .title,
+.home .typeWrap .right .title,
+.home .typeWrap .left .time,
+.home .typeWrap .right .time {
+  margin-left: 10px;
+  margin-right: 5px;
+  font-size: 16px;
+  color: white;
+}
+.home .typeWrap .left .arrow,
+.home .typeWrap .right .arrow {
+  font-size: 12px;
+  color: #ccc;
+}

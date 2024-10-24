@@ -1,0 +1,47 @@
+.home {
+  padding: 20px; // 根据需要调整内边距
+  background-color: #3a68ff; // 天蓝色背景
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; // 根据需要调整外边距
+    .expense,
+    .income {
+      font-size: 16px;
+      color: white;
+
+      b {
+        font-weight: bold;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .typeWrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .left,
+    .right {
+      background-color: #3b5edc;
+      border-radius: 20px; // 设置圆角，增加这个值会使边框更接近椭圆形
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      margin-left: 10px;
+      .title,
+      .time {
+        margin-left: 10px;
+        margin-right: 5px;
+        font-size: 16px;
+        color: white;
+      }
+
+      .arrow {
+        font-size: 12px; // 根据需要调整图标大小
+        color: #ccc; // 根据需要调整图标颜色
+      }
+    }
+  }
+}
