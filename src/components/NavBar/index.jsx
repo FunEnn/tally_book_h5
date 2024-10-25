@@ -13,7 +13,7 @@ const NavBar = ({ showNav }) => {
 
   const changeTab = (path) => {
     setActiveKey(path);
-    history.push(path);
+    navigate.push(path);
   };
 
   return (

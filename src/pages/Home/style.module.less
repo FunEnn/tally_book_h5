@@ -17,31 +17,42 @@
       }
     }
   }
-
-  .typeWrap {
+}
+.typeWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .left,
+  .right {
+    background-color: #3b5edc;
+    border-radius: 20px; // 设置圆角，增加这个值会使边框更接近椭圆形
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    .left,
-    .right {
-      background-color: #3b5edc;
-      border-radius: 20px; // 设置圆角，增加这个值会使边框更接近椭圆形
-      display: flex;
-      align-items: center;
-      padding: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    .title,
+    .time {
       margin-left: 10px;
-      .title,
-      .time {
-        margin-left: 10px;
-        margin-right: 5px;
-        font-size: 16px;
-        color: white;
-      }
+      margin-right: 5px;
+      font-size: 16px;
+      color: white;
+    }
 
-      .arrow {
-        font-size: 12px; // 根据需要调整图标大小
-        color: #ccc; // 根据需要调整图标颜色
-      }
+    .arrow {
+      font-size: 12px; // 根据需要调整图标大小
+      color: #ccc; // 根据需要调整图标颜色
+    }
+  }
+}
+.content-wrap {
+  height: calc(~"(100% - 50px)");
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #f5f5f5;
+  padding: 10px;
+  :global {
+    .za-pull {
+      overflow: unset;
     }
   }
 }
