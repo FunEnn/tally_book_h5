@@ -3,12 +3,26 @@ import { Popup, Button, DatePicker } from "zarm";
 import "zarm/dist/zarm.min.css";
 import dayjs from "dayjs";
 
-const PopupDate = ({ onDateSelect, trigger, mode = "month" }) => {
+const PopupDate = ({
+  onDateSelect,
+  trigger,
+  mode = "month",
+  ref,
+  columnType = ["year", "month"],
+}) => {
   const [show, setShow] = useState(false);
   const [now, setNow] = useState(new Date());
-
+  if (ref) {
+    ref.current = {
+      show: () => {
+        setShow(true);
+      },
+      close: () => {
+        setShow(false);
+      },
+    };
+  }
   const choseMonth = (item) => {
-    console.log(item);
     setNow(item);
     setShow(false);
     if (mode == "month") {
@@ -38,7 +52,7 @@ const PopupDate = ({ onDateSelect, trigger, mode = "month" }) => {
           mode={mode}
           onConfirm={choseMonth}
           onCancel={() => setShow(false)}
-          columnType={["year", "month"]}
+          columnType={columnType}
         />
       </Popup>
     </>

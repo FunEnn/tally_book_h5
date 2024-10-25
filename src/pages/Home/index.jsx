@@ -8,12 +8,15 @@ import { useRef } from "react";
 import { Button } from "zarm";
 import { Popup } from "zarm";
 
+import CustomIcon from "@/components/CustomIcon";
+import PopupAddBill from "@/components/PopupAddBill";
 import MainLayout from "../../components/MainLayout";
 import s from "./style.module.less";
 import BillItem from "../../components/BillItem";
 
 const Home = () => {
   const typeRef = useRef(); // 账单类型 ref
+  const addRef = useRef(); // 添加账单 ref
   const [currentSelect, setCurrentSelect] = useState({}); // 当前筛选类型
   const [currentTime, setCurrentTime] = useState(dayjs().format("YYYY-MM")); // 当前筛选时间
   const monthRef = useRef(); // 月份筛选 ref
@@ -60,7 +63,9 @@ const Home = () => {
   const toggle = () => {
     typeRef.current && typeRef.current.show();
   };
-
+  const addToggle = () => {
+    addRef.current && addRef.current.show();
+  };
   // 筛选类型
   const select = (item) => {
     setRefreshing(REFRESH_STATE.loading);
@@ -87,6 +92,7 @@ const Home = () => {
 
   const handleDateSelect = (item) => {
     selectMonth(item);
+
   };
   return (
     <MainLayout>
@@ -146,6 +152,10 @@ const Home = () => {
           </Pull>
         ) : null}
       </div>
+      <Button className={s.add} onClick={addToggle}>
+        <CustomIcon type="tianjia" />
+      </Button>
+      <PopupAddBill ref={addRef} onReload={refreshData}/>
     </MainLayout>
   );
 };

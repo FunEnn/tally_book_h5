@@ -1,0 +1,140 @@
+// style.module.less
+.addWrap {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    .close {
+      cursor: pointer;
+    }
+  }
+
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 15px; // 根据需要调整内边距
+      background-color: #f0f0f0; // 按钮背景颜色
+      border: 1px solid #ccc; // 按钮边框
+      border-radius: 4px; // 按钮圆角
+      cursor: pointer; // 鼠标悬停时显示指针
+      font-size: 14px; // 字体大小
+      color: #333; // 字体颜色
+
+      &:hover {
+        background-color: #e0e0e0; // 鼠标悬停时的背景颜色
+      }
+    }
+    .type {
+      display: flex;
+      align-items: center;
+      .expense,
+      .income {
+        padding: 10px 15px;
+        border-radius: 15px;
+        margin-right: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        background-color: #f5f5f5;
+      }
+
+      .active {
+        background-color: #e0f7ff; // 浅蓝色背景
+        color: #007bff; // 文字颜色，可根据需要调整
+      }
+    }
+    .time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px; // 根据需要调整内边距
+      background-color: #f5f5f5; // 按钮背景颜色
+      border: 1px solid #ccc; // 按钮边框
+      border-radius: 15px;
+      font-size: 14px; // 字体大小
+      color: #333; // 字体颜色
+
+      &:hover {
+        background-color: #e0e0e0; // 鼠标悬停时的背景颜色
+      }
+    }
+  }
+
+  .typeBody {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; // 根据需要调整间距
+    padding: 10px;
+
+    .typeItem {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      .iconfontWrap {
+        display: flex;
+        align-items: center;
+        margin-right: 8px; // 图标与文本之间的间距
+      }
+
+      .expense {
+        color: #ff4949; // 支出类型的颜色
+        background-color: #ffe1e1; // 支出类型的背景颜色
+      }
+
+      .income {
+        color: #13ce66; // 收入类型的颜色
+        background-color: #e3f9e5; // 收入类型的背景颜色
+      }
+
+      .active {
+        background-color: #e0f7ff; // 选中项的背景颜色
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // 选中项的阴影
+      }
+    }
+
+    .iconfont {
+      font-size: 1.2rem; // 图标大小，根据需要调整
+    }
+  }
+  .remark {
+    padding: 0 24px;
+    padding-bottom: 12px;
+    color: #4b67e2;
+    :global {
+      .za-input--textarea {
+        border: 1px solid #e9e9e9;
+        padding: 10px;
+      }
+    }
+  }
+
+  .money {
+    display: flex;
+    align-items: center; // 垂直居中对齐子元素
+    justify-content: flex-start; // 水平起始对齐子元素
+    margin-bottom: 10px; // 根据需要添加外边距
+
+    .sufix {
+      margin-right: 5px; // 货币符号和金额之间的间距
+      font-size: 40px; // 字体大小，根据需要调整
+      color: #333; // 字体颜色，根据需要调整
+    }
+
+    .amount {
+      font-size: 40px; // 字体大小，根据需要调整
+      color: #333; // 字体颜色，根据需要调整
+      font-weight: bold; // 加粗字体
+    }
+  }
+}
