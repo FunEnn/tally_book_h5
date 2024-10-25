@@ -1,0 +1,66 @@
+// style.module.less
+.detail {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    .type {
+      display: flex;
+      align-items: center;
+
+      .iconfont {
+        margin-right: 10px;
+        font-size: 24px; // 根据需要调整图标大小
+        color: #496aff; // 收入类型的颜色
+      }
+    }
+
+    .amount {
+      font-size: 32px; // 根据需要调整金额大小
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      font-size: 20px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center; // 垂直居中对齐
+
+      .time,
+      .remark {
+        display: flex;
+        justify-content: flex-start; // 可根据需要调整
+
+        span {
+          &:first-child {
+            margin-bottom: 14px; // 添加间距
+          }
+        }
+      }
+    }
+
+    span {
+      margin-right: 20px;
+    }
+
+    .operation {
+      margin-top: 20px;
+      display: flex; // 使用 Flexbox
+      justify-content: space-between; // 两边对齐
+      width: 80%; // 确保容器占满宽度
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}

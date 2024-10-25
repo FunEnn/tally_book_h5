@@ -10,7 +10,7 @@ import { get, typeMap, post } from "@/utils";
 import PopupDate from "../PopupDate";
 import s from "./style.module.less";
 
-const PopupAddBill = forwardRef((props, ref, onReload) => {
+const PopupAddBill = forwardRef((props, ref, detail = {}, onReload) => {
   const [show, setShow] = useState(false); // 内部控制弹窗显示隐藏。
   const [payType, setPayType] = useState("expense"); // 支出或收入类型
   const dateRef = useRef();
@@ -21,19 +21,35 @@ const PopupAddBill = forwardRef((props, ref, onReload) => {
   const [income, setIncome] = useState([]); // 收入类型数组
   const [remark, setRemark] = useState(""); // 备注
   const [showRemark, setShowRemark] = useState(false); // 备注输入框展示控制
+  const id = props.detail && props.detail.id // 外部传进来的账单详情 id
+  console.log(id);
+  useEffect(() => {
+    if (detail.id) {
+      setPayType(detail.pay_type == 1 ? "expense" : "income");
+      setCurrentType({
+        id: detail.type_id,
+        name: detail.type_name,
+      });
+      setRemark(detail.remark);
+      setAmount(detail.amount);
+      setDate(dayjs(Number(detail.date)).$d);
+    }
+  }, [detail]);
 
   useEffect(() => {
     // 使用 async 关键字包裹异步逻辑
     async function fetchTypes() {
       try {
-        const response = await get("/type/list");
-        const list = response.data.list;
+        const {
+          data: { list },
+        } = await get("/type/list");
         const _expense = list.filter((i) => i.type === 1); // 支出类型
         const _income = list.filter((i) => i.type === 2); // 收入类型
         setExpense(_expense);
         setIncome(_income);
-        if (_expense.length > 0) {
-          setCurrentType(_expense[0]); // 新建账单，类型默认是支出类型数组的第一项
+        // 没有 id 的情况下，说明是新建账单。
+        if (!id) {
+          setCurrentType(_expense[0]);
         }
       } catch (error) {
         console.error("Failed to fetch type list:", error);
@@ -64,6 +80,7 @@ const PopupAddBill = forwardRef((props, ref, onReload) => {
       },
     };
   }
+
   // 添加账单
   const addBill = async () => {
     if (!amount) {
@@ -73,21 +90,27 @@ const PopupAddBill = forwardRef((props, ref, onReload) => {
     const params = {
       amount: Number(amount).toFixed(2), // 账单金额小数点后保留两位
       type_id: (currentType && currentType.id) || 1, // 账单种类id
-      type_name:  (currentType && currentType.name) || "餐饮", // 账单种类名称
+      type_name: (currentType && currentType.name) || "餐饮", // 账单种类名称
       date: dayjs(date).format("YYYY-MM-DD"), // 日期传时间戳
       pay_type: payType == "expense" ? 1 : 2, // 账单类型传 1 或 2
       remark: remark || "", // 备注
     };
-    const result = await post("/bill/add", params);
-    // 重制数据
-    setAmount("");
-    setPayType("expense");
-    setCurrentType(expense[0]);
-    setDate(new Date());
-    setRemark("");
-    Toast.show("添加成功");
+    if (id) {
+      params.id = id;
+      // 如果有 id 需要调用详情更新接口
+      const result = await post("/bill/update", params);
+      Toast.show("修改成功");
+    } else {
+      const result = await post("/bill/add", params);
+      setAmount("");
+      setPayType("expense");
+      setCurrentType(expense[0]);
+      setDate(new Date());
+      setRemark("");
+      Toast.show("添加成功");
+    }
     setShow(false);
-    if (props.onReload) props.onReload();
+    if (onReload) onReload();
   };
 
   const handleMoney = (value) => {

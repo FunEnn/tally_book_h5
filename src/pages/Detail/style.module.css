@@ -1,0 +1,55 @@
+.detail {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.detail .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.detail .card .type {
+  display: flex;
+  align-items: center;
+}
+.detail .card .type .iconfont {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #496aff;
+}
+.detail .card .amount {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.detail .card .info {
+  font-size: 20px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail .card .info .time,
+.detail .card .info .remark {
+  display: flex;
+  justify-content: flex-start;
+}
+.detail .card .info .time span:first-child,
+.detail .card .info .remark span:first-child {
+  margin-bottom: 14px;
+}
+.detail .card span {
+  margin-right: 20px;
+}
+.detail .card .operation {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.detail .card .operation span {
+  font-size: 20px;
+}
