@@ -22,7 +22,6 @@ const PopupAddBill = forwardRef((props, ref, detail = {}, onReload) => {
   const [remark, setRemark] = useState(""); // 备注
   const [showRemark, setShowRemark] = useState(false); // 备注输入框展示控制
   const id = props.detail && props.detail.id // 外部传进来的账单详情 id
-  console.log(id);
   useEffect(() => {
     if (detail.id) {
       setPayType(detail.pay_type == 1 ? "expense" : "income");

@@ -7,8 +7,8 @@ import { TabBar } from "zarm";
 import s from "./style.module.less";
 import CustomIcon from "../CustomIcon";
 
-const NavBar = ({ showNav }) => {
-  const [activeKey, setActiveKey] = useState("/");
+const NavBar = ({ showNav, path }) => {
+  const [activeKey, setActiveKey] = useState(path || "/");
   const navigate = useNavigate();
 
   const changeTab = (path) => {

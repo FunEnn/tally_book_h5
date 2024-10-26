@@ -1,11 +1,11 @@
 
 import NavBar from './NavBar';
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, path }) => {
   return (
     <div>
       {children}
-      <NavBar showNav={true}/>
+      <NavBar showNav={true} path={path}/>
     </div>
   );
 };
