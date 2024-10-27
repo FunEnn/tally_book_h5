@@ -86,3 +86,36 @@ export const imgUrlTrans = (url) => {
         return url
     }
 }
+
+// 防抖
+export const debounce = (func, delay) => {
+    let timer;
+    return function (...args) {
+        if (timer) {
+            clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+            func.apply(this, args)
+        }, delay)
+    }
+}
+
+// 节流
+export const throttle = (func, delay) => {
+    let lastFunc;
+    let lastRan;
+    return function (...args) {
+        if (!lastRan) {
+            func.apply(this, args)
+            lastRan = Date.now()
+        } else {
+            clearTimeout(lastFunc)
+            lastFunc = setTimeout(function () {
+                if (Date.now() - lastRan >= delay) {
+                    func.apply(this, args)
+                    lastRan = Date.now()
+                }
+            }, delay - (Date.now() - lastRan))
+        }
+    }
+}

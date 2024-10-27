@@ -7,6 +7,7 @@ import s from "./style.module.less";
 import { Toast } from "zarm/lib";
 import { post } from "@/utils/index.js";
 import { useEffect } from "react";
+import { debounce, throttle } from "../../utils";
 const Login = () => {
   const [username, setUsername] = useState(""); // 账号
   const [password, setPassword] = useState(""); // 密码
@@ -61,6 +62,24 @@ const Login = () => {
       Toast.show(msg);
     }
   };
+
+  // 防抖处理账号输入
+  const handleUsernameChange = useCallback(
+    debounce((e) => {
+      console.log("username", e.target.value);
+      setUsername(e.target.value);
+    }, 300),
+    []
+  );
+  // 节流处理密码输入
+  const handlePasswordChange = useCallback(
+    throttle((e) => {
+      console.log("password", e.target.value);
+      setPassword(e.target.value);
+    }, 1000),
+    []
+  );
+
   return (
     <div className={s.auth}>
       <div className={s.head} />
@@ -88,7 +107,7 @@ const Login = () => {
               placeholder="请输入账号"
               clearable
               type="text"
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={handleUsernameChange}
             />
           </List.Item>
         </List>
@@ -101,7 +120,7 @@ const Login = () => {
               placeholder="请输入密码"
               clearable
               type="text"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
             />
           </List.Item>
         </List>
