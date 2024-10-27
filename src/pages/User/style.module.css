@@ -1,0 +1,44 @@
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 25px;
+  background-color: #1778ff;
+}
+.user .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.user .head .info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  font-size: 20px;
+  color: white;
+  flex: 1;
+}
+.user .head .info .name {
+  margin-bottom: 15px;
+}
+.user .head .info b {
+  margin-left: 5px;
+}
+.content {
+  width: 90%;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 3px 2px 20px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.logout {
+  width: 90%;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}

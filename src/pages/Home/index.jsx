@@ -25,6 +25,7 @@ const Home = () => {
   const [totalPage, setTotalPage] = useState(0); // 分页总数
   const [refreshing, setRefreshing] = useState(REFRESH_STATE.normal); // 下拉刷新状态
   const [loading, setLoading] = useState(LOAD_STATE.normal); // 上拉加载状态
+  const [data, setData] = useState([]); // 账单
   // 获取账单方法
   const getBillList = async () => {
     const { data } = await get(
@@ -32,6 +33,7 @@ const Home = () => {
         currentSelect.id || "all"
       }`
     );
+    setData(data);
     // 下拉刷新，重制数据
     if (page == 1) {
       setList(data.list);
@@ -92,17 +94,16 @@ const Home = () => {
 
   const handleDateSelect = (item) => {
     selectMonth(item);
-
   };
   return (
     <MainLayout>
       <div className={s.home}>
         <div className={s.header}>
           <span className={s.expense}>
-            总支出：<b>¥ 200</b>
+            总支出：<b>¥{data.totalExpense}</b>
           </span>
           <span className={s.income}>
-            总收入：<b>¥ 500</b>
+            总收入：<b>¥{data.totalIncome}</b>
           </span>
         </div>
         <div className={s.typeWrap}>
@@ -155,7 +156,7 @@ const Home = () => {
       <Button className={s.add} onClick={addToggle}>
         <CustomIcon type="tianjia" />
       </Button>
-      <PopupAddBill ref={addRef} onReload={refreshData}/>
+      <PopupAddBill ref={addRef} onReload={refreshData} />
     </MainLayout>
   );
 };

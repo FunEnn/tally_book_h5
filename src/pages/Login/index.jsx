@@ -6,12 +6,14 @@ import cx from "classnames";
 import s from "./style.module.less";
 import { Toast } from "zarm/lib";
 import { post } from "@/utils/index.js";
+import { useEffect } from "react";
 const Login = () => {
   const [username, setUsername] = useState(""); // 账号
   const [password, setPassword] = useState(""); // 密码
   const [verify, setVerify] = useState(""); // 验证码
   const [captcha, setCaptcha] = useState(""); // 验证码变化后存储值
   const [type, setType] = useState("login"); // 登录注册类型
+
   //  验证码变化，回调方法
   const handleChange = useCallback((captcha) => {
     console.log("captcha", captcha);
@@ -59,7 +61,6 @@ const Login = () => {
       Toast.show(msg);
     }
   };
-
   return (
     <div className={s.auth}>
       <div className={s.head} />
@@ -81,7 +82,7 @@ const Login = () => {
         <List>
           <List.Item
             prefix={<CustomIcon type="zhanghao" />}
-            style={{ marginBottom: 15, opacity: 0.5 }}
+            style={{ marginBottom: 15, opacity: 0.7 }}
           >
             <Input
               placeholder="请输入账号"
@@ -94,7 +95,7 @@ const Login = () => {
         <List>
           <List.Item
             prefix={<CustomIcon type="mima" />}
-            style={{ marginBottom: 15, opacity: 0.5 }}
+            style={{ marginBottom: 15, opacity: 0.7 }}
           >
             <Input
               placeholder="请输入密码"

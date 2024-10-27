@@ -1,0 +1,49 @@
+.user {
+  display: flex; // 使用 Flexbox 布局
+  align-items: center; // 垂直居中对齐
+  width: 100%;
+  padding: 25px; // 根据需要调整内边距
+  background-color: rgb(23, 120, 255);
+
+  .head {
+    display: flex; // 使用 Flexbox 布局
+    flex-direction: row; // 子元素水平排列
+    align-items: center; // 垂直居中对齐
+    width: 100%;
+
+    .info {
+      display: flex; // 使用 Flexbox 布局
+      flex-direction: column; // 子元素垂直排列
+      margin-right: 20px; // 与头像之间的间距
+      font-size: 20px;
+      color: white;
+      flex: 1; // 占据剩余空间
+      .name {
+        margin-bottom: 15px; // 标题与副标题之间的间距
+      }
+
+      b {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.content {
+  width: 90%;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 3px 2px 20px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.logout {
+  width: 90%;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}

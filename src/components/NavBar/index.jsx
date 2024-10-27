@@ -18,7 +18,6 @@ const NavBar = ({ showNav, path }) => {
 
   return (
     <TabBar
-      visible={showNav}
       activeKey={activeKey}
       onChange={changeTab}
       className={s.tab}

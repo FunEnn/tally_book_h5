@@ -32,7 +32,6 @@ const Data = () => {
   };
   // 绘制饼图方法
   const setPieChart = (data) => {
-    console.log(echarts);
     // 初始化饼图，返回实例。
     proportionChart = echarts.init(document.getElementById("proportion"));
 
@@ -91,6 +90,7 @@ const Data = () => {
       .sort((a, b) => b.number - a.number); // 过滤出账单类型为收入的项
     setExpenseData(expense_data);
     setIncomeData(income_data);
+    console.log(data);
     // 绘制饼图
     setPieChart(pieType == "expense" ? expense_data : income_data);
   };
@@ -191,7 +191,10 @@ const Data = () => {
         </div>
       </div>
       {/* 这是用于放置饼图的 DOM 节点 */}
-      <div id="proportion" style={{ width: "100%", height: 300, marginTop: 50 }} />
+      <div
+        id="proportion"
+        style={{ width: "100%", height: 300, marginTop: 50 }}
+      />
     </MainLayout>
   );
 };

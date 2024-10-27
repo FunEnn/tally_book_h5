@@ -37,7 +37,7 @@ const BillItem = ({ bill }) => {
 
   // 前往账单详情
   const goToDetail = (item) => {
-    navigate.push(`/detail?id=${item.id}`);
+    navigate(`/detail?id=${item.id}`);
   };
 
   return (
@@ -57,7 +57,7 @@ const BillItem = ({ bill }) => {
       </div>
       {bill &&
         bill.bills.map((item) => (
-          <List>
+          <List key={item.id}>
             <List.Item
               className={s.bill}
               key={item.id}
