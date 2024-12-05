@@ -1,8 +1,15 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 项目介绍：前后端分离的记账本
 
-Currently, two official plugins are available:
+## 技术栈：React + React-router + Less + Vite + Egg.js + ECharts + MySQL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 项目成果：
+
+- 封装节流和防抖自定义指令，对性能进行优化
+
+- 使用 egg-jwt 实现用户鉴权和登录 ，将鉴权逻辑封装为中间件，实现代码的复用
+
+- 支持用户按不同的分类或日期进行账单查询，并提供账单修改和新增功能
+
+- 二次封装 Axios，集成请求/响应拦截器，优化网络请求建立
