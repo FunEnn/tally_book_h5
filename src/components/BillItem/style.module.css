@@ -1,0 +1,39 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+.item .headerDate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 10px;
+}
+.item .headerDate .date {
+  font-size: 18px;
+  font-weight: bold;
+}
+.item .headerDate .money {
+  display: flex;
+  align-items: center;
+}
+.item .headerDate .money .expense,
+.item .headerDate .money .income {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.item .headerDate .money img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.item .headerDate .money span {
+  font-size: 14px;
+}
+.item .bill {
+  padding: 10px;
+}
+.item .bill .itemIcon {
+  margin-right: 10px;
+}

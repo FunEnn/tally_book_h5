@@ -1,0 +1,44 @@
+.userinfo {
+  width: 100%;
+  max-width: 600px; // 根据需要调整最大宽度
+  margin: 0 auto; // 水平居中
+  padding: 20px;
+  background-color: #fff; // 背景颜色
+  font-size: 16px; // 标题字体大小
+  .item {
+    margin-bottom: 20px; // 项目之间的间距
+
+    .title {
+      font-size: 25px; // 标题字体大小
+      font-weight: bold; // 粗体
+      margin-bottom: 20px; // 标题与内容之间的间距
+    }
+
+    .avatar {
+      display: flex; // 使用 Flexbox 布局
+      align-items: center; // 垂直居中对齐
+      margin-bottom: 20px; // 头像与描述之间的间距
+
+      .avatarUrl {
+        width: 80px; // 头像宽度
+        height: 80px; // 头像高度
+        border-radius: 50%; // 圆形头像
+        object-fit: cover; // 裁剪图片以适应容器
+        margin-right: 20px; // 头像与按钮之间的间距
+      }
+
+      .desc {
+        font-size: 16px; // 描述文本字体大小
+        color: #666; // 描述文本颜色
+
+        .filePicker {
+          .upload {
+            margin-top: 10px; // 上传按钮与描述之间的间距
+            font-size: 16px; // 上传按钮字体大小
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}

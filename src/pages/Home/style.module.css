@@ -1,0 +1,73 @@
+.home {
+  padding: 20px;
+  background-color: #3a68ff;
+}
+.home .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.home .header .expense,
+.home .header .income {
+  font-size: 16px;
+  color: white;
+}
+.home .header .expense b,
+.home .header .income b {
+  font-weight: bold;
+  font-size: 25px;
+}
+.typeWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.typeWrap .left,
+.typeWrap .right {
+  background-color: #3b5edc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-left: 10px;
+}
+.typeWrap .left .title,
+.typeWrap .right .title,
+.typeWrap .left .time,
+.typeWrap .right .time {
+  margin-left: 10px;
+  margin-right: 5px;
+  font-size: 16px;
+  color: white;
+}
+.typeWrap .left .arrow,
+.typeWrap .right .arrow {
+  font-size: 12px;
+  color: #ccc;
+}
+.content-wrap {
+  height: calc((100% - 50px));
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+.content-wrap :global .za-pull {
+  overflow: unset;
+}
+.add {
+  position: fixed;
+  /* 使用固定定位 */
+  padding: 10px;
+  right: 20px;
+  /* 距离右边距20px */
+  bottom: 80px;
+  /* 距离底部20px */
+  z-index: 1000;
+  /* 确保元素在最上层 */
+  border: 1px solid #ccc;
+  /* 边框颜色 */
+  border-radius: 50%;
+  /* 圆形边框 */
+}

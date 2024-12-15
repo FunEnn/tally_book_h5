@@ -1,0 +1,45 @@
+.item {
+  display: flex;
+  flex-direction: column;
+
+  .headerDate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 250, 250);
+    padding: 10px;
+
+    .date {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .money {
+      display: flex;
+      align-items: center;
+
+      .expense, .income {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .bill {
+    padding: 10px;
+    .itemIcon {
+      margin-right: 10px;
+    }
+  }
+}
